@@ -12,8 +12,7 @@ A simple quiz application built using React.js. Users can create text-based and 
 ## **🛠️ Tech Stack**  
 - **Frontend:** React.js, Tailwind CSS  
 - **State Management:** React Context API  
-- **Routing:** React Router  
-- **Build Tool:** Vite (if used)  
+- **Routing:** React Router   
 
 ## **📌 Installation & Setup**  
 1️⃣ **Clone the repository**  

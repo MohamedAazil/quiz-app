@@ -59,11 +59,6 @@ A simple quiz application built using React.js. Users can create text-based and 
    ```bash
    git push origin feature-name
    ```  
-5. **Open a Pull Request**.  
-
-## **📄 License**  
-This project is **open-source** and available under the **MIT License**.  
-
 ---
 
 ### 📢 **Live Demo (If Hosted)**

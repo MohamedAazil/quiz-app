@@ -61,6 +61,6 @@ A simple quiz application built using React.js. Users can create text-based and 
    ```  
 ---
 
-### 📢 **Live Demo (If Hosted)**
+### 📢 **Live Demo**
 If you have deployed it, add a link here:  
 ➡ **[https://quiz-app-mohamedaazils-projects.vercel.app/](#)**  

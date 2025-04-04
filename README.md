@@ -35,24 +35,6 @@ A simple quiz application built using React.js. Users can create text-based and 
 5️⃣ **Open the app in your browser**  
    The app runs on `http://localhost:5173` (or another available port).  
 
-## **📂 Project Structure**  
-```
-quiz-app/
-│── src/
-│   ├── Components/
-│   │   ├── Maker.jsx  # Quiz creation component
-│   │   ├── Display.jsx  # Quiz display component
-│   ├── Context/
-│   │   ├── Context.jsx  # State management
-│   ├── Pages/
-│   │   ├── Home.jsx  # Main page
-│   ├── App.jsx
-│   ├── main.jsx
-│── public/
-│── package.json
-│── README.md
-```  
-
 ## **📌 Usage**  
 1️⃣ **Create a Question**  
    - Enter a question and specify if it’s text-based or multiple-choice.  
@@ -64,7 +46,7 @@ quiz-app/
    - The app provides instant feedback on whether your answer is correct.  
 
 ## **📜 Contributing**  
-Want to improve this project? Follow these steps:  
+
 1. **Fork** the repository.  
 2. **Create a new branch**:  
    ```bash
@@ -87,6 +69,6 @@ This project is **open-source** and available under the **MIT License**.
 
 ### 📢 **Live Demo (If Hosted)**
 If you have deployed it, add a link here:  
-➡ **[Live Demo](#)**  
+➡ **[https://quiz-app-mohamedaazils-projects.vercel.app/](#)**  
 
 This `README.md` will improve the documentation for your project on GitHub. Let me know if you want to modify anything! 🚀🔥

@@ -1,22 +1,5 @@
-Quiz Maker App Documentation
-Table of Contents
-Introduction
+#Quiz Maker App Documentation
 
-Installation and Setup
-
-Project Structure
-
-Context API
-
-Components
-
-App Routing
-
-Usage Guide
-
-Key Features
-
-Future Enhancements
 
 1. Introduction
 The Quiz Maker App is a simple React-based application that allows users to create and answer quiz questions. Users can select the type of question (text or multiple-choice), input the question, and provide possible answers. The application then displays the question to the user for answering and evaluates the response.

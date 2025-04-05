@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const Context = createContext();
 
@@ -16,20 +16,23 @@ export const ContextProvider = (props) => {
   const [userChoice, setUserChoice] = useState("");
   const [result, setResult] = useState("");
   const [showResult, setShowResult] = useState(false);
+  const [choiceCount, setChoiceCount] = useState(1);
+  const [finalCount, setFinalCount] = useState(0);
+  const [showCount, setShowCount] = useState(true);
+  const [options, setOptions] = useState([]);
 
   const checkAnswer = () => {
-    if (userChoice.length == 0) {
+    if (userChoice.length == "") {
       alert("Enter Answer");
       return;
     }
-    console.log(userChoice)
-    console.log(result)
+    console.log(userChoice);
+    console.log(result);
 
     if (answer === userChoice) {
       setResult("Correct");
-    }
-    else{
-        setResult("Wrong")
+    } else {
+      setResult("Wrong");
     }
     setShowResult(true);
   };
@@ -59,10 +62,17 @@ export const ContextProvider = (props) => {
     setUserChoice,
     result,
     showResult,
-    checkAnswer
+    checkAnswer,
+    choiceCount,
+    setChoiceCount,
+    showCount,
+    setShowCount,
+    options,
+    setOptions,
+    finalCount,
+    setFinalCount,
   };
 
-  
   return (
     <Context.Provider value={contextValue}>{props.children}</Context.Provider>
   );

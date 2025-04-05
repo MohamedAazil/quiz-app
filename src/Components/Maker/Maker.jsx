@@ -23,6 +23,14 @@ const Maker = () => {
     setOption2,
     option3,
     setOption3,
+    choiceCount,
+    setChoiceCount,
+    showCount,
+    setShowCount,
+    setFinalCount,
+    finalCount,
+    options,
+    setOptions,
   } = useContext(Context);
 
   return (
@@ -43,6 +51,9 @@ const Maker = () => {
           >
             <option value="text">Text</option>
             <option value="radio">Multiple Choice</option>
+            <option value="select">Drop Down</option>
+            <option value="multi-select">Multiple Drop Down</option>
+            <option value="radio">Long answer</option>
           </select>
           <button
             className="text-white bg-black rounded w-32"
@@ -86,50 +97,85 @@ const Maker = () => {
           className="flex flex-col items-center py-3 px-2 h-[80vh] justify-center"
           id="answer"
         >
-          <h1 className="text-black font-bold text-4xl my-5 mx-auto">
-            Enter Options
-          </h1>
-          <input
-            required
-            type="text"
-            value={option1}
-            onChange={(e) => setOption1(e.target.value)}
-            className="my-5 w-52"
-            placeholder="Enter Option"
-          />
-          <input
-            type="text"
-            required
-            value={option2}
-            onChange={(e) => setOption2(e.target.value)}
-            className="my-5 w-52"
-            placeholder="Enter Option"
-          />
-          <input
-            type="text"
-            required
-            value={option3}
-            onChange={(e) => setOption3(e.target.value)}
-            className="my-5 w-52"
-            placeholder="Enter Option"
-          />
-          <input
-            required
-            type={`${answer}`}
-            value={answer}
-            onChange={(e) => setAnswer(e.target.value)}
-            className="my-5 w-52"
-            placeholder="Enter answer"
-          />
-          <button
-            className="text-white bg-black rounded w-32"
-            onClick={() => {
-              setShowAnswer((prev) => !prev);
-              setWaiting((prev) => !prev);
-            }}
+          <div
+            className={`${
+              showCount ? "flex" : "hidden"
+            }  flex-col gap-3 items-center`}
           >
-            Submit
-          </button>
+            <h2>Enter Number Of Choices</h2>
+            <input
+              type="text"
+              value={choiceCount}
+              onChange={(e) => {
+                setChoiceCount(e.target.value);
+              }}
+            />
+            <button
+              className="text-white bg-black rounded w-32"
+              onClick={() => {
+                setFinalCount(parseInt(choiceCount));
+                setShowCount(false);
+              }}
+            >
+              Submit
+            </button>
+            <h3>{choiceCount}</h3>
+          </div>
+          <div
+            className={`${
+              !showCount ? "flex" : "hidden"
+            }  flex-col gap-3 items-center overflow-y-scroll`}
+          >
+            <h1 className="text-black font-bold text-4xl my-5 mx-auto">
+              Enter Options
+            </h1>
+            {choiceCount!= 0 && Array(parseInt(choiceCount))
+              .fill()
+              .map((item, index) => {
+                return (
+                  <div className="flex flex-col items-center" key={index}>
+                    <h2>Option {index + 1}</h2>
+                    <input
+                      required
+                      type="text"
+                      value={options[index]}
+                      onChange={(e) => {
+                        let temp = options.slice();
+                        temp[index] = e.target.value;
+                        setOptions(temp);
+                      }}
+                      className="my-5 w-52"
+                      placeholder="Enter Option"
+                    />
+                    <button
+                      className="text-white bg-black rounded w-32"
+                      onClick={() => {}}
+                    >
+                      Submit
+                    </button>
+                    <h2>{options[index]}</h2>
+                  </div>
+                );
+              })}
+
+            <input
+              required
+              type={`${answer}`}
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              className="my-5 w-52"
+              placeholder="Enter answer"
+            />
+            <button
+              className="text-white bg-black rounded w-32"
+              onClick={() => {
+                setShowAnswer((prev) => !prev);
+                setWaiting((prev) => !prev);
+              }}
+            >
+              Submit
+            </button>
+          </div>
         </div>
       )}
       {showAnswer && type == "text" && (
